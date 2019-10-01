@@ -33,6 +33,7 @@ const employees = [
 
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
 
+// bonuscalculator calculates only the bonus
 
 function BonusCalculator(employee) {
 
@@ -45,32 +46,42 @@ function BonusCalculator(employee) {
     totalPercentage += .04;
   }
 
-if (employee.employeeNumber.length == 4) {
+  if (employee.employeeNumber.length == 4) {
     totalPercentage += .05;
-}
+  }
 
-if (employee.annualSalary > 65000) totalPercentage -= .01;
+  if (employee.annualSalary > 65000) totalPercentage -= .01;
 
-if (totalPercentage > .13) totalPercentage = .13;
-if (totalPercentage < 0) totalPercentage = 0;
+  if (totalPercentage > .13) totalPercentage = .13;
+  if (totalPercentage < 0) totalPercentage = 0;
 
-return totalPercentage;
+  return totalPercentage;
 }
 console.log(employees);
+
 
 function newEmployeeObject(employee) {
   let bonusPercentage = BonusCalculator(employee);
 
-    let newEmployee = {
-      name: employee.name,
-      bonusPercentage: bonusPercentage,
-      totalCompensation: Number(employee.annualSalary) + Number(employee.annualSalary * bonusPercentage),
-      totalBonus: Number(employee.annualSalary) * bonusPercentage
-    };
-    
-    return newEmployee;
+  let newEmployee = {
+    name: employee.name,
+    bonusPercentage: bonusPercentage,
+    totalCompensation: Number(employee.annualSalary) + Number(employee.annualSalary * bonusPercentage),
+    totalBonus: Number(employee.annualSalary) * bonusPercentage
+  };
+
+  return newEmployee;
 }
 
+
+function newEmployeeArray(employee) {
+  let newArray = [];
+  for (i = 0; i < employee.length; i++) {
+    newArray.push(newEmployeeObject(employee[i]));
+  }
+
+  return newArray
+}
 
 
 
