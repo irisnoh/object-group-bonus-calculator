@@ -51,13 +51,27 @@ if (employee.employeeNumber.length == 4) {
 
 if (employee.annualSalary > 65000) totalPercentage -= .01;
 
-if (totalPercentage > .13) totalPercentage == .13;
-if (totalPercentage < 0) totalPercentage == 0;
+if (totalPercentage > .13) totalPercentage = .13;
+if (totalPercentage < 0) totalPercentage = 0;
 
 return totalPercentage;
 }
-
 console.log(employees);
+
+function newEmployeeObject(employee) {
+  let bonusPercentage = BonusCalculator(employee);
+
+    let newEmployee = {
+      name: employee.name,
+      bonusPercentage: bonusPercentage,
+      totalCompensation: Number(employee.annualSalary) + Number(employee.annualSalary * bonusPercentage),
+      totalBonus: Number(employee.annualSalary) * bonusPercentage
+    };
+    
+    return newEmployee;
+}
+
+
 
 
 /*
