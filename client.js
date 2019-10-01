@@ -33,6 +33,23 @@ const employees = [
 
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
 
+
+function BonusCalculator(employee) {
+
+  let totalBonus = 0;
+  if (employee.reviewRating == 5) {
+    totalBonus += .1 * employee.annualSalary
+  }
+  return totalBonus;
+}
+
+/*
+walk through
+1. bonus calculator function
+2. loop function - passes each employee through bonus function. calculates employees bonuses
+3. object creation using bonuses
+/*
+
 // Take small steps! Don't write a for loop and two functions that do all of the calculations right away.
 // This problem is massive! Break the problem down. Use the debugger.
 // What is the fewest lines of code I can write and test to get just a little closer?
