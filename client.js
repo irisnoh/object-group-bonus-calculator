@@ -39,8 +39,16 @@ function BonusCalculator(employee) {
   let totalBonus = 0;
   if (employee.reviewRating == 5) {
     totalBonus += .1 * employee.annualSalary
+  } else if (employee.reviewRating == 4) {
+    totalBonus += .06 * employee.annualSalary
+  } else if (mployee.reviewRating == 3) {
+    totalBonus += .04 * employee.annualSalary
   }
-  return totalBonus;
+
+if (employee.employeeNumber.length == 4) {
+    totalBonus += .05 * employee.annualSalary
+}
+return totalBonus;
 }
 
 /*
