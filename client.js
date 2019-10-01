@@ -31,6 +31,7 @@ const employees = [
   }
 ];
 
+
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
 
 // bonuscalculator calculates only the bonus
@@ -81,7 +82,18 @@ function newEmployeeArray(employee) {
   }
 
   return newArray
+
+
+
+function updateDOM() {
+  console.log('testingDOM');
+  let el = $('#newArray');
+
+updateDOM ();
+return true;
 }
+}
+
 
 
 
