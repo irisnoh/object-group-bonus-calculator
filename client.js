@@ -36,27 +36,36 @@ const employees = [
 
 function BonusCalculator(employee) {
 
-  let totalBonus = 0;
+  let totalPercentage = 0;
   if (employee.reviewRating == 5) {
-    totalBonus += .1 * employee.annualSalary
+    totalPercentage += .1;
   } else if (employee.reviewRating == 4) {
-    totalBonus += .06 * employee.annualSalary
-  } else if (mployee.reviewRating == 3) {
-    totalBonus += .04 * employee.annualSalary
+    totalPercentage += .06;
+  } else if (employee.reviewRating == 3) {
+    totalPercentage += .04;
   }
 
 if (employee.employeeNumber.length == 4) {
-    totalBonus += .05 * employee.annualSalary
+    totalPercentage += .05;
 }
-return totalBonus;
+
+if (employee.annualSalary > 65000) totalPercentage -= .01;
+
+if (totalPercentage > .13) totalPercentage == .13;
+if (totalPercentage < 0) totalPercentage == 0;
+
+return totalPercentage;
 }
+
+console.log(employees);
+
 
 /*
 walk through
 1. bonus calculator function
 2. loop function - passes each employee through bonus function. calculates employees bonuses
 3. object creation using bonuses
-/*
+*/
 
 // Take small steps! Don't write a for loop and two functions that do all of the calculations right away.
 // This problem is massive! Break the problem down. Use the debugger.
@@ -64,5 +73,3 @@ walk through
 
 // This is not a race. Everyone on your team should understand what is happening.
 // Ask questions when you don't.
-
-console.log( employees );
