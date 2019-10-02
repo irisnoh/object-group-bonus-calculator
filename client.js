@@ -35,7 +35,7 @@ const employees = [
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
 
 // bonuscalculator calculates only the bonus
-
+// function BonusCalculatr (anyname) <- argument
 function BonusCalculator(employee) {
 
   let totalPercentage = 0;
@@ -74,25 +74,33 @@ function newEmployeeObject(employee) {
   return newEmployee;
 }
 
-
-function newEmployeeArray(employee) {
+/*function rounding(employee) {
+  let numbersRound = newEmployeeObject(employee);
+  var round = Math.round(numbersRound);
+  document.write("Number after rounding : " + round +
+    "<br>");
+  var round = Math.round(12.51);
+  document.write("Number after rounding : " + round);
+}
+*/
+function newEmployeeArray(empployees) {
   let newArray = [];
-  for (i = 0; i < employee.length; i++) {
-    newArray.push(newEmployeeObject(employee[i]));
+  for (i = 0; i < employees.length; i++) {
+    newArray.push(newEmployeeObject(employees[i]));
   }
 
   return newArray
+}
 
 
-
-function updateDOM() {
+function updateDOM(employees) {
   console.log('testingDOM');
   let el = $('#newArray');
+  console.log(newEmployeeArray())
 
-updateDOM ();
-return true;
+  return true;
 }
-}
+
 
 
 
