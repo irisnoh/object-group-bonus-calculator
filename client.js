@@ -58,7 +58,7 @@ function BonusCalculator(employee) {
 
   return totalPercentage;
 }
-console.log(employees);
+console.log('Employees', employees);
 
 
 function newEmployeeObject(employee) {
@@ -67,15 +67,15 @@ function newEmployeeObject(employee) {
   let newEmployee = {
     name: employee.name,
     bonusPercentage: bonusPercentage,
-    totalCompensation: Number(employee.annualSalary) + Number(employee.annualSalary * bonusPercentage),
-    totalBonus: Number(employee.annualSalary) * bonusPercentage
+    totalCompensation: Math.round(Number(employee.annualSalary) + Number(employee.annualSalary * bonusPercentage)),
+    totalBonus: Math.round(Number(employee.annualSalary) * bonusPercentage)
   };
 
   return newEmployee;
 }
 
-/*function rounding(employee) {
-  let numbersRound = newEmployeeObject(employee);
+/*function rounding (totalBonus) {
+  let numbersRound = newEmployeeObject(totalBonus);
   var round = Math.round(numbersRound);
   document.write("Number after rounding : " + round +
     "<br>");
@@ -83,7 +83,8 @@ function newEmployeeObject(employee) {
   document.write("Number after rounding : " + round);
 }
 */
-function newEmployeeArray(empployees) {
+
+function newEmployeeArray(employees) {
   let newArray = [];
   for (i = 0; i < employees.length; i++) {
     newArray.push(newEmployeeObject(employees[i]));
@@ -92,7 +93,7 @@ function newEmployeeArray(empployees) {
   return newArray
 }
 
-
+/*
 function updateDOM(employees) {
   console.log('testingDOM');
   let el = $('#newArray');
@@ -100,6 +101,9 @@ function updateDOM(employees) {
 
   return true;
 }
+
+
+
 
 
 
